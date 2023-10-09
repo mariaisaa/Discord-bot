@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
+const { Client, IntentsBitField } = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -17,10 +17,10 @@ client.on('ready', (c) => {
 
 client.on('interactionCreate', async (interaction) =>{
     try {
-        if (!InteractionWebhook.isButton) return;
+        if (!interaction.isButton) return;
     await interaction.deferReply({ ephemeral: true });
 
-    const role = interaction.guild.roles.cache.get(interacton.customId)
+    const role = interaction.guild.roles.cache.get(interaction.customId)
     if (!role) {
         interaction.editReply({
             content: "I couldn't find that role",

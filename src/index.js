@@ -14,7 +14,7 @@ client.on('ready', (c) => {
     console.log(`${c.user.tag} is online.`);
 });
 
-
+//role
 client.on('interactionCreate', async (interaction) =>{
     try {
         if (!interaction.isButton) return;
@@ -40,7 +40,7 @@ client.on('interactionCreate', async (interaction) =>{
     await interaction.member.roles.add(role);
     await interaction.editReply(`the role ${role} has been added`);
 
-        
+            
     } catch (error) {
         console.log(error)
         
